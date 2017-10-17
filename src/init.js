@@ -23,8 +23,8 @@ $(document).ready(function() {
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $("body").height() * Math.random(),
-      $("body").width() * Math.random(),
+      $('body').height() * Math.random(),
+      $('body').width() * Math.random(),
       Math.random() * 1000
     );
     window.dancers.push(dancer);
@@ -32,8 +32,8 @@ $(document).ready(function() {
   });
 
   $('#lineup').on('click', function() {
-    window.dancers.forEach(function(dancer) {
-      dancer.lineup();
+    window.dancers.forEach(function(dancer, i) {
+      dancer.lineup(i);
     });
   });
 });
