@@ -37,6 +37,10 @@ a:link, a:visited, a:active{
   height: auto;
 }
 
+.dolphin:hover {
+  transform: scale(1.5);
+}
+
 .crab {
   max-width: 100px;
   height: auto;

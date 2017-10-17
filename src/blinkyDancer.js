@@ -2,7 +2,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   let node = $('<span class="dancer"><img class="dolphin" src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
   
   var min = $('.topbar').height();
-  var max = $('body').height() + $(this.$node).height();
+  var max = $('body').height() - $(this.$node).height();
   var top = Math.floor(Math.random() * (max - min + 1) + min);
 
   makeDancer.call(this, top, left, timeBetweenSteps, node);
@@ -21,6 +21,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   //   blinkyDancer.$node.toggle();
   // };
   this.mouseOver();
+  this.degrees = 0;
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
@@ -28,6 +29,11 @@ makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 //
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
+  var newStyle = {
+    transform: `rotate(${this.degrees}deg)`
+  };
+  $(this.$node).css(newStyle);
+  this.degrees -= 360;
 };
 
 makeBlinkyDancer.prototype.mouseOver = function() {
