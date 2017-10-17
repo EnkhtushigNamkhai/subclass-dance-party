@@ -1,9 +1,12 @@
 body, html{
   height:100%;
 }
+
 body{
+  background-image: url('https://s-media-cache-ak0.pinimg.com/originals/c2/9e/37/c29e37f816c51dcab40e7e75788584ec.jpg');
+  background-size: cover;
   margin: 0px;
-  background-color:#444;
+  background-color: white;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
@@ -21,7 +24,20 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
   position:absolute;
+  transition: 0.2s all;
+}
+
+img {
+  max-width: 100px;
+  height: auto;
+}
+
+.header {
+  color: pink;
+  text-align: center;
+}
+
+.grow:hover {
+  transform: scale(1.5);
 }

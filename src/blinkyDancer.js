@@ -13,7 +13,7 @@ var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   //   // other effects you can use on a jQuery-wrapped html tag.
   //   blinkyDancer.$node.toggle();
   // };
-
+  this.mouseOver();
 };
 
 makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
@@ -21,7 +21,13 @@ makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
 //
 makeBlinkyDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  this.$node.toggle();
+};
+
+makeBlinkyDancer.prototype.mouseOver = function() {
+
+  this.$node.on('mouseover', function() {
+    ($(this)).addClass('grow');
+  });
 };
 
 makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
