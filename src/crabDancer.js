@@ -1,8 +1,7 @@
-var makeWavyDancer = function(top, left, timeBetweenSteps) { 
-  let node = $('<span class="dancer"><img class="dolphin" src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
-  let topBoundary = 600 + (Math.random() * 100);
-  let leftBoundary = 100 + (Math.random() * 50);
-  makeDancer.call(this, topBoundary, leftBoundary, timeBetweenSteps, node);
+var makeCrabDancer = function(top, left, timeBetweenSteps) { 
+  node = $('<span class="dancer"><img class="crab" src="http://rs276.pbsrc.com/albums/kk28/mnstrkpixels/disney%20pixels/the%20little%20mermaid/Sebastian.gif~c200" /></span>');
+  makeDancer.call(this, 700, left, timeBetweenSteps, node);
+  this.name = 'crab';
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -20,28 +19,17 @@ var makeWavyDancer = function(top, left, timeBetweenSteps) {
   this.right = true;
 };
 
-makeWavyDancer.prototype = Object.create(makeDancer.prototype);
+makeCrabDancer.prototype = Object.create(makeDancer.prototype);
 
 //
-makeWavyDancer.prototype.step = function() {
+makeCrabDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  // go up and right
-  if (this.top < 200) {
-    this.down = true;
-  } else if (this.top > 900) {
-    this.down = false;
-  }
 
+ 
   if (this.left > 800) {
     this.right = false;
   } else if (this.left < 200) {
     this.right = true;
-  }
-
-  if (!this.down) {
-    this.top -= 60;
-  } else if (this.down) {
-    this.top += 60;
   }
 
   if (this.right) {
@@ -51,10 +39,10 @@ makeWavyDancer.prototype.step = function() {
   }
 
   var newStyle = {
-    top: this.top,
+    top: 700 + (Math.random() * 100),
     left: this.left
   };
   this.$node.css(newStyle);
 };
 
-makeWavyDancer.prototype.constructor = makeWavyDancer;
+makeCrabDancer.prototype.constructor = makeCrabDancer;

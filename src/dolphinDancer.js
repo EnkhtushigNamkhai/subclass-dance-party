@@ -1,5 +1,7 @@
-var makeBouncyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+var makeDolphinDancer = function(top, left, timeBetweenSteps) {
+  let node = $('<span class="dancer"><img class="dolphin" src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
+  makeDancer.call(this, top, left, timeBetweenSteps, node);
+  this.name = 'dolphin';
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -16,10 +18,10 @@ var makeBouncyDancer = function(top, left, timeBetweenSteps) {
 
 };
 
-makeBouncyDancer.prototype = Object.create(makeDancer.prototype);
+makeDolphinDancer.prototype = Object.create(makeDancer.prototype);
 
 //
-makeBouncyDancer.prototype.step = function() {
+makeDolphinDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   var newTop = Math.random() * 500;
   var newStyle = {
@@ -32,4 +34,4 @@ makeBouncyDancer.prototype.step = function() {
 };
 
 
-makeBouncyDancer.prototype.constructor = makeBouncyDancer;
+makeDolphinDancer.prototype.constructor = makeDolphinDancer;

@@ -21,17 +21,28 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
+    let defaultNode = $('<span class="dancer"><img class="dolphin" src="http://rs276.pbsrc.com/albums/kk28/mnstrkpixels/disney%20pixels/the%20little%20mermaid/cutefish.gif~c200" /></span>');
 
     var dancer = new dancerMakerFunction(
       ($('body').height() * Math.random() - 100),
       ($('body').width() * Math.random() - 100),
-      (1000 + Math.random() * 1000)
+      (1000 + Math.random() * 1000),
+      defaultNode
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node); 
   });
 
   $('#lineup').on('click', function() {
+    window.dancers.sort(function(a, b) {
+      if (a.name < b.name) {
+        return -1;
+      }
+      if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    });
     window.dancers.forEach(function(dancer, i) {
       dancer.lineup(i);
     });

@@ -1,8 +1,9 @@
-var makeWavyDancer = function(top, left, timeBetweenSteps) { 
-  let node = $('<span class="dancer"><img class="dolphin" src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
+var makeFlounderDancer = function(top, left, timeBetweenSteps) { 
   let topBoundary = 600 + (Math.random() * 100);
   let leftBoundary = 100 + (Math.random() * 50);
+  let node = $('<span class="dancer"><img class="flounder" src="http://rs276.pbsrc.com/albums/kk28/mnstrkpixels/disney%20pixels/the%20little%20mermaid/cutefish.gif~c200" /></span>');
   makeDancer.call(this, topBoundary, leftBoundary, timeBetweenSteps, node);
+  this.name = 'flounder';
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 
@@ -20,10 +21,10 @@ var makeWavyDancer = function(top, left, timeBetweenSteps) {
   this.right = true;
 };
 
-makeWavyDancer.prototype = Object.create(makeDancer.prototype);
+makeFlounderDancer.prototype = Object.create(makeDancer.prototype);
 
 //
-makeWavyDancer.prototype.step = function() {
+makeFlounderDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   // go up and right
   if (this.top < 200) {
@@ -57,4 +58,4 @@ makeWavyDancer.prototype.step = function() {
   this.$node.css(newStyle);
 };
 
-makeWavyDancer.prototype.constructor = makeWavyDancer;
+makeFlounderDancer.prototype.constructor = makeFlounderDancer;

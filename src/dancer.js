@@ -1,9 +1,9 @@
 // Creates and returns a new dancer object that can step
-var makeDancer = function(top, left, timeBetweenSteps) {
+var makeDancer = function(top, left, timeBetweenSteps, node) {
 
 
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"><img src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
+  this.$node = node;
 
   this.timeBetweenSteps = timeBetweenSteps;
   this.top = top;
@@ -59,6 +59,8 @@ makeDancer.prototype.getClosestDancer = function() {
     };
     closestDancer.$node.css(newStyle);
     context.$node.css(newStyle);
+    clearTimeout(closestDancer.timer);
+    clearTimeout(context.timer);
   });
 };
 
@@ -67,7 +69,7 @@ makeDancer.prototype.lineup = function(i) {
   this.top = $('body').height() / 2;
   this.left = ((i + 1) * 50);
   let newStyle = {
-    top: this.top,
+    top: this.top - $(this.$node).height(),
     left: this.left
   };
   this.$node.css(newStyle);
@@ -79,6 +81,7 @@ makeDancer.prototype.step = function() {
 };
 
 makeDancer.prototype.setPosition = function(top, left) {
+  console.log(top + ' ' + left);
   var styleSettings = {
     top,
     left
