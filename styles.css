@@ -10,6 +10,7 @@ body{
   margin: 0px;
   background-color: white;
   font-size: 18px;
+  font-family: 'Lakki Reddy';
 }
 a:link, a:visited, a:active{
   color: white;
@@ -22,11 +23,10 @@ a:link, a:visited, a:active{
 }
 .topbar{
   height:60px;
-  background-color: #1c0f44;
+  float: right;
+  
 }
-.title{
-  background-color: #777;
-}
+
 .dancer{
   position:absolute;
   transition: 0.2s all;
@@ -48,8 +48,22 @@ a:link, a:visited, a:active{
 }
 
 .header {
-  color: pink;
-  text-align: center;
+  color: #011230;
+  font: 'Dancing Script', cursive;
+}
+
+.header_wrapper {
+  display: inline-block;
+  margin: 20px;
+  width: auto;
+}
+
+.title {
+  background-color: none;
+  background-size: 250px;
+  background-image: url('http://clipartbarn.com/wp-content/uploads/2017/01/Bubble-clip-art-free-clipart-images-3.jpg');
+  border-radius: 40px;
+  padding: 15px;
 }
 
 .grow:hover {
@@ -58,9 +72,11 @@ a:link, a:visited, a:active{
 
 .lineupButton {
   margin-top: 15px;
-  margin-left: 20px;
-  padding: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
   border-radius: 5px;
   background-color: white;
   border: none;
+  cursor: pointer;
 }

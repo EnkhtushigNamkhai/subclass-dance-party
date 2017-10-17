@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Object Dance Party</title>
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Lakki+Reddy" rel="stylesheet">    
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
@@ -10,19 +11,31 @@
     <script src="src/wavyDancer.js"></script>
     <script src="src/flounderDancer.js"></script>
     <script src="src/crabDancer.js"></script>
+
   </head>
   <body>
     <audio src="littlemermaid.mp3" autoplay loop></audio>
     <div class="topbar">
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeWavyDancer">add a wavy dancer</a>  
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeDolphinDancer">add a dolphin dancer</a> 
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeFlounderDancer">add a flounder dancer</a> 
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeCrabDancer">add a crab dancer</a>       
+     <!--  <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeWavyDancer">add a wavy dancer</a>  --> 
+     <!--  <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeDolphinDancer">add a dolphin dancer</a>  -->
+     <!--  <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeFlounderDancer">add a flounder dancer</a>  -->
+<!--       <a href="#" class="addDancerButton" data-dancer-maker-function-name="makeCrabDancer">add a crab dancer</a> -->
+
+      <button class="addDancerButton lineupButton" data-dancer-maker-function-name="makeBlinkyDancer">add a blinky dancer</button>       
+      <button class="addDancerButton lineupButton" data-dancer-maker-function-name="makeWavyDancer">add a wavy dancer</button>
+      <button class="addDancerButton lineupButton" data-dancer-maker-function-name="makeDolphinDancer">add a dolphin dancer</button>
+      <button class="addDancerButton lineupButton" data-dancer-maker-function-name="makeFlounderDancer">add a flounder dancer</button>
+      <button class="addDancerButton lineupButton" data-dancer-maker-function-name="makeCrabDancer">add a crab dancer</button>
       <button class="lineupButton" id="lineup">line dancers up</button>    
-      <button class="lineupButton" id="dance">start dancin'!</button>   
+      <button class="lineupButton" id="dance">start dancin'!</button> 
+  
     </div>  
-    <h1 class="header">Dance party under the sea</h1>
+    <div class = "header_wrapper">
+      <div class="title">
+        <h1 class="header">Dance party under the sea</h1>
+      </div>
+    </div>
     <script src="src/init.js"></script>
   </body>
 </html>

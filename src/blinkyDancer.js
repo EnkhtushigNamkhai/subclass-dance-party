@@ -1,6 +1,12 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
   let node = $('<span class="dancer"><img class="dolphin" src="https://d1v8u1ev1s9e4n.cloudfront.net/572cca1a5ccacf20bbe74f53" /></span>');
+  
+  var min = $('.topbar').height();
+  var max = $('body').height() + $(this.$node).height();
+  var top = Math.floor(Math.random() * (max - min + 1) + min);
+
   makeDancer.call(this, top, left, timeBetweenSteps, node);
+  this.name = 'dolphin';
   // we plan to overwrite the step function below, but we still want the superclass step behavior to work,
   // so we must keep a copy of the old version of this function
 

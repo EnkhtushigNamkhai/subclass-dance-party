@@ -14,7 +14,7 @@ var makeCrabDancer = function(top, left, timeBetweenSteps) {
   //   // See http://api.jquery.com/category/effects/ for this and
   //   // other effects you can use on a jQuery-wrapped html tag.
   //   blinkyDancer.$node.toggle();
-  // }; 
+  // }; s
   this.down = false;
   this.right = true;
 };
@@ -25,7 +25,13 @@ makeCrabDancer.prototype = Object.create(makeDancer.prototype);
 makeCrabDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 
- 
+  var windowHeight = $('body').height();
+  var crabHeight = $(this.$node).height();
+  var max = (windowHeight - crabHeight);
+  var min = max - 100;
+  this.top = Math.floor(Math.random() * (max - min + 1) + min); 
+  
+  
   if (this.left > 800) {
     this.right = false;
   } else if (this.left < 200) {
@@ -39,7 +45,7 @@ makeCrabDancer.prototype.step = function() {
   }
 
   var newStyle = {
-    top: 700 + (Math.random() * 100),
+    top: this.top,
     left: this.left
   };
   this.$node.css(newStyle);
